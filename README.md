@@ -26,42 +26,42 @@ We were then tasked with changing file permissions, creating/deleting users, and
       
 ## Step 2: Create User Accounts
   Add user accounts for sam, joe, amy, sara, and admin.
-    `sudo adduser sam`
-    `sudo adduser joe`
-    `sudo adduser amy`
-    `sudo adduser sara`
-    `sudo adduser admin`
+    - `sudo adduser sam`
+    - `sudo adduser joe`
+    - `sudo adduser amy`
+    - `sudo adduser sara`
+    - `sudo adduser admin`
   We want to make sure that only the admin user has general sudo group access. 
-    `sudo usermod -aG sudo admin` 
-    `groups admin`
+    - `sudo usermod -aG sudo admin` 
+    - `groups admin`
     
 ## Step 3: Create user Group and Collaborative Folder
   Add the group engineers to the system.
-    `sudo addgroup engineers`
+    - `sudo addgroup engineers`
   Add users sam, joe, amy, and sara to the managed group.
-    `sudo usermod -aG engineers sam`
-    `sudo usermod -aG engineers joe`
-    `sudo usermod -aG engineers amy`
-    `sudo usermod -aG engineers sara`
+    - `sudo usermod -aG engineers sam`
+    - `sudo usermod -aG engineers joe`
+    - `sudo usermod -aG engineers amy`
+    - `sudo usermod -aG engineers sara`
   Create a shared folder for this group: /home/engineers.
-    `sudo mkdir /home/engineers`
-    `sudo chgrp engineers /home/engineers`
+    - `sudo mkdir /home/engineers`
+    - `sudo chgrp engineers /home/engineers`
   Change ownership on the new engineers' shared folder to the engineers group.
-    `sudo chgrp engineers /home/engineers`
+    - `sudo chgrp engineers /home/engineers`
     
 ## Step 4: Lynis Auditing
   Install the Lynis package to your system.
-    `sudo apt install lynis`
+    - `sudo apt install lynis`
   Check the Lynis documentation for instructions on how to run a system audit.
-    `man lynis`
+    - `man lynis`
   Run a Lynis system audit with sudo.
-    `sudo lynis audit system`
+    - `sudo lynis audit system`
     
 ## Bonus: `chkrootkit`
   Install the chkrootkit package to your system
-    `sudo apt install chkrootkit`
+    - `sudo apt install chkrootkit`
   Check the chkrootkit documentation for instructions on how to run a scan to find system root kits.
-    `man chkrootkit`
+    - `man chkrootkit`
   Run chkrootkit (with sudo) in expert mode to verify the system does not have a root kit installed.
-    `sudo chkrootkit -x`
+    - `sudo chkrootkit -x`
  
