@@ -3,14 +3,13 @@ Linux System Administration fundamentals
 
 In the project, we were presented with a scenario from a fictional company as if we were a Systems Administrator.  
 We were then tasked with changing file permissions, creating/deleting users, and auditing the system via Lynis.
+- Step 1: Ensure Permissions on Sensitive Files
+- Step 2: Create User Accounts
+- Step 3: Create User Group and Collaborative Folder
+- Step 4: Lynis Auditing
+- Bonus: chkrootkit
 
-        Step 1: Ensure Permissions on Sensitive Files
-        Step 2: Create User Accounts
-        Step 3: Create User Group and Collaborative Folder
-        Step 4: Lynis Auditing
-        Bonus: chkrootkit
-
-##Step 1: Ensure Permissions on Sensitive Files
+## Step 1: Ensure Permissions on Sensitive Files
   Inspect the file permissions of each of the files below and change them to the assigned permissions. 
     `/etc/shadow` should allow only root read and write access.
       `ls -al`
@@ -25,7 +24,7 @@ We were then tasked with changing file permissions, creating/deleting users, and
       `ls -al`
       `sudo chmod 644 /etc/passwd` 
       
-##Step 2: Create User Accounts
+## Step 2: Create User Accounts
   Add user accounts for sam, joe, amy, sara, and admin.
     `sudo adduser sam`
     `sudo adduser joe`
@@ -36,7 +35,7 @@ We were then tasked with changing file permissions, creating/deleting users, and
     `sudo usermod -aG sudo admin` 
     `groups admin`
     
-##Step 3: Create user Group and Collaborative Folder
+## Step 3: Create user Group and Collaborative Folder
   Add the group engineers to the system.
     `sudo addgroup engineers`
   Add users sam, joe, amy, and sara to the managed group.
@@ -50,7 +49,7 @@ We were then tasked with changing file permissions, creating/deleting users, and
   Change ownership on the new engineers' shared folder to the engineers group.
     `sudo chgrp engineers /home/engineers`
     
-##Step 4: Lynis Auditing
+## Step 4: Lynis Auditing
   Install the Lynis package to your system.
     `sudo apt install lynis`
   Check the Lynis documentation for instructions on how to run a system audit.
@@ -58,7 +57,7 @@ We were then tasked with changing file permissions, creating/deleting users, and
   Run a Lynis system audit with sudo.
     `sudo lynis audit system`
     
-Bonus: `chkrootkit`
+## Bonus: `chkrootkit`
   Install the chkrootkit package to your system
     `sudo apt install chkrootkit`
   Check the chkrootkit documentation for instructions on how to run a scan to find system root kits.
