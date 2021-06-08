@@ -10,19 +10,23 @@ We were then tasked with changing file permissions, creating/deleting users, and
 - Bonus: chkrootkit
 
 ## Step 1: Ensure Permissions on Sensitive Files
-  Inspect the file permissions of each of the files below and change them to the assigned permissions. 
+Inspect the file permissions of each of the files below and change them to the assigned permissions. 
+
 `/etc/shadow` should allow only root read and write access.
-    - `ls -al`
-    - `sudo chmod 600 /etc/shadow`
+  - `ls -al`
+  - `sudo chmod 600 /etc/shadow`
+    
 `/etc/gshadow` should allow only root read and write access.
-    - `ls -al`
-    - `sudo chmod 600 /etc/gshadow`
+  - `ls -al`
+  - `sudo chmod 600 /etc/gshadow`
+    
 `/etc/group` should allow root read and write access, and allow everyone else read access only.
-    - `ls -al`
-    - `sudo chmod 644 /etc/group`
+  - `ls -al`
+  - `sudo chmod 644 /etc/group`
+    
 `/etc/passwd` should allow root read and write access, and allow everyone else read access only.
-    - `ls -al`
-    - `sudo chmod 644 /etc/passwd` 
+  - `ls -al`
+  - `sudo chmod 644 /etc/passwd` 
       
 ## Step 2: Create User Accounts
 Add user accounts for sam, joe, amy, sara, and admin.
