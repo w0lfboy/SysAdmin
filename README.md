@@ -1,4 +1,4 @@
-# SysAdmin
+# System Administration
 Linux System Administration fundamentals
 
 In the project, we were presented with a scenario from a fictional company as if we were a Systems Administrator.  
